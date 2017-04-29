@@ -81,9 +81,9 @@ public class UsersAdapter extends BaseAdapter {
 
         private final ImageView thumbnail;
 
-        public ViewHolder(ImageView imageViewCoverArt) {
+        public ViewHolder(ImageView userThumbnail) {
 
-            this.thumbnail = imageViewCoverArt;
+            this.thumbnail = userThumbnail;
         }
     }
 }

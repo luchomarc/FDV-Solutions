@@ -29,12 +29,7 @@ public class UserInfoActivity extends AppCompatActivity {
         int width=dm.widthPixels;
         int height=dm.heightPixels;
 
-        if (height>500){
-            getWindow().setLayout((int) (width * 0.8), (int) (height * 0.7));
-        }
-        else {
-            getWindow().setLayout((int) (width * 0.9), (int) (height * 0.9));
-        }
+        getWindow().setLayout((int) (width * 0.8), (int) (height * 0.7));
 
         Picasso.with(this).load(getIntent().getStringExtra("largeImageUrl")).into(largeImage);
 

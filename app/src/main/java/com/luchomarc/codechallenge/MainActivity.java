@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
   private GridView gridView;
   private UsersAdapter usersAdapter;
   private ProgressBar progressBar;
-  private ProgressBar miniProgressBar;
+  private ProgressBar lowerProgressBar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     setContentView(R.layout.activity_main);
 
     progressBar=(ProgressBar)findViewById(R.id.progressBar);
-    miniProgressBar=(ProgressBar)findViewById(R.id.miniProgressBar);
+    lowerProgressBar =(ProgressBar)findViewById(R.id.lowerProgressBar);
     gridView = (GridView)findViewById(R.id.gridview);
     usersAdapter = new UsersAdapter(this, users);
     gridView.setAdapter(usersAdapter);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     gridView.setOnScrollListener(new EndlessScrollListener() {
       @Override
       public boolean onLoadMore(int page, int totalItemsCount) {
-        miniProgressBar.setVisibility(View.VISIBLE);
+        lowerProgressBar.setVisibility(View.VISIBLE);
         generateUsers();
         return true;
       }
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                 usersAdapter.notifyDataSetChanged();
                 if(users.size()>51){
-                  miniProgressBar.setVisibility(View.INVISIBLE);
+                  lowerProgressBar.setVisibility(View.INVISIBLE);
                 }
                 else{
                   progressBar.setVisibility(View.INVISIBLE);
